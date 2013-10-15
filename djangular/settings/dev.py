@@ -7,12 +7,9 @@ from common import *
 
 
 ########## DEBUG CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
-########## END DEBUG CONFIGURATION
+TASTYPIE_FULL_DEBUG = True
 
 
 ########## EMAIL CONFIGURATION
@@ -25,8 +22,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangular',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'dev_db.sqlite',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -38,18 +36,13 @@ DATABASES = {
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    }
-}
+#CACHES = {
+    #'default': {
+        #'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    #}
+#}
 ########## END CACHE CONFIGURATION
 
-
-########## CELERY CONFIGURATION
-# See: http://docs.celeryq.org/en/latest/configuration.html#celery-always-eager
-CELERY_ALWAYS_EAGER = True
-########## END CELERY CONFIGURATION
 
 
 ########## TOOLBAR CONFIGURATION
